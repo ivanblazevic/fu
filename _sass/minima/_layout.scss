@@ -205,6 +205,20 @@
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
+
+  .tag {
+    background: #7d00e6;
+    padding: 0.1rem .5rem;
+    color: white;
+    border-radius: 4px;
+
+    &:before {
+      content: "\f02b";
+      font-family: FontAwesome;
+      padding-right: .5em;
+    }
+
+  }
 }
 
 .post-link {
