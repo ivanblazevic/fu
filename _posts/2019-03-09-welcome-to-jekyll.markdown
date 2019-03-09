@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "How to create custom google maps marker pins"
 date:   2019-03-09 19:50:44 +0100
 categories: jekyll update
 ---
