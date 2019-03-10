@@ -8,7 +8,7 @@
 
   // Positioning context for the mobile navigation icon
   position: relative;
-  background: #7d0fe2;
+  background: $brand-color;
 }
 
 .site-title {
@@ -207,7 +207,7 @@
   color: $grey-color;
 
   .tag {
-    background: #7d00e6;
+    background: $brand-color;
     padding: 0.1rem .5rem;
     color: white;
     border-radius: 4px;

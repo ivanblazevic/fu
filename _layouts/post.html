@@ -11,7 +11,7 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
       {% for tag in page.tags %}
-        <a class="tag" href="/tag#{{ tag | slugify }}">{{ tag }}</a>
+        <a class="tag" href="/tags#{{ tag | slugify }}">{{ tag }}</a>
       {% endfor %}
 
       {%- if page.author -%}
@@ -28,4 +28,8 @@ layout: default
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
 </article>
+
+<h2>Related topics</h2>
+{% include related-posts.html %}
