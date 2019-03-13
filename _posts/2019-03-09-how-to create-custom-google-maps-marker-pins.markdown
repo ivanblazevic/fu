@@ -10,6 +10,10 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 <pre class="codepen" data-height="470" data-type="result" data-href="kjmBd" data-user="andymcfee" data-safe="true"> <code> </code> <a href="http://codepen.io/andymcfee/pen/kjmBd">Check out this Pen!</a> </pre>
 <script src="http://codepen.io/assets/embed/ei.js"> </script>
 
+
+<div id="csstutor" data-height="470" data-href="5c882f95a7c1e07300010bce"></div>
+<script src="http://localhost:8080/eb.js"></script>
+
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
 Jekyll also offers powerful support for code snippets:

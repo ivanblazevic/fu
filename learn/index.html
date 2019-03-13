@@ -1,0 +1,92 @@
+
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lib/codemirror.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.0/beautify-css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script type="text/javascript" src="node_modules/text-diff/diff.js"></script>
+
+    <script src=lib/codemirror.js></script>
+    <script src="./mode/css/css.js"></script>
+    <script src="./mode/javascript/javascript.js"></script>
+    <script src="./mode/xml/xml.js"></script>
+    <script src="./mode/htmlmixed/htmlmixed.js"></script>
+
+    <style id="element"></style>
+  </head>
+  <body>
+
+    <div id="actions">
+      <nav>
+        <span v-show="!showField('name')">{{ project.name || 'Untitled' }}<button class="icon" @click="focusField('name')">
+          <i class="fas fa-pencil-alt"></i>
+        </button></span>
+        <input  v-show="showField('name')" ref="name" @blur="onBlur" id="project-name" type="text" v-model="project.name">    
+        
+        <div style="float: right;line-height: 30px;">
+          <button class="primary" style="margin-right: 10px;" onclick="save()"><i style="margin-right: 6px" class="fas fa-save"></i>Save</button>
+
+          <button class="primary step" onclick="previous()"><i style="margin-right: 6px" class="fas fa-arrow-left"></i>Previous</button>
+          <button class="primary step" onclick="next()">Next<i style="margin-left: 6px" class="fas fa-arrow-right"></i></button>
+        </div>
+      </nav>
+
+      <div class="container">
+
+          <div class="side" style="    border-right: 1px solid gray;">
+            <h2>HTML
+                <button style="float: right" class="primary" onclick="editElement()">
+                  <i v-show="isEditElement" class="fas fa-eye"></i>
+                  <i v-show="!isEditElement" class="fas fa-edit"></i>
+                </button>
+            </h2>
+
+            <div v-show="!isEditElement" id="ee" class="element-p2333"></div>
+
+            <div v-bind:style="{ opacity: isEditElement ? 1 : 0 }">
+              <textarea id="code" name="code" style="width: 100%;height: 100%"></textarea>
+            </div>
+
+          </div>
+    
+          <div class="side">
+            <h2>CSS
+                <div style="float: right">
+                    <button class="primary" v-if="isEdit && currentIndex === project.steps.length -1" onclick="addStep()">Add Step</button>
+                    <button class="primary" onclick="edit()">
+                      <i v-show="isEdit" class="fas fa-eye"></i>
+                      <i v-show="!isEdit" class="fas fa-edit"></i>
+                    </button>
+                  </div>
+            </h2>
+
+            <h5 v-show="!isEdit" id="title">{{ step && step.title }}</h5>
+    
+            <h5 v-show="isEdit">
+              <input v-on:change="test" id="titleInput" style="width: 100%" type="text" v-model="project.steps && project.steps[currentIndex].title">
+            </h5>
+            
+            <div v-show="!isEdit">
+              <pre><code id="text" class="css">...</code></pre>
+            </div>
+    
+            <div v-bind:style="{ opacity: isEdit ? 1 : 0 }">
+              <textarea id="code_css" name="code_css" style="width: 100%;height: 100%"></textarea>
+            </div>
+  
+          </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

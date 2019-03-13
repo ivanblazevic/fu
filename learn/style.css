@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+button { outline: none; }
+input:focus { outline: none; }
+
+nav {
+  font-size: 30px;
+  font-weight: bold;
+  background: #022c43;
+  display: block;
+  color: #ffd700;
+  padding: 12px;
+}
+
+code {
+  border-radius: 6px;
+}
+
+button {
+  color: #ffd700;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+nav button {
+  color: #ffd700;
+}
+
+button.icon {
+  border: none;
+  font-size: 26px;
+  border-radius: 5px;
+  background: none;
+}
+
+button.primary {
+  border: none;
+  padding: 6px 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  background: #053f5e;
+}
+
+button.step {
+  width: 160px;
+}
+
+del {
+  color: red;
+}
+
+ins {
+  color: #0dd40d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+}
+
+.side {
+  flex: 50%;
+  padding: 12px;
+}
+
+.side h2 {
+  margin-top: 0;
+  line-height: 32px;
+}
+
+.element-p2333 {
+  height: calc(100% - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#project-name {
+  font-family: "Rubik", sans-serif;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  padding: 0;
+}
