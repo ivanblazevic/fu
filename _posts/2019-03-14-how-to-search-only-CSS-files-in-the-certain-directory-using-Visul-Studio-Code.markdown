@@ -10,4 +10,4 @@ Enter file extension using globstar matching, in my case I'm searching inside SC
 
 I'm looking for color property inside all SCSS files inside the libs directory, final query would look like: `./libs/**/*.scss`
 
-![VSCode type serach](assets/posts/2019-03-14/vscode-file-type-search.jpg)
+![VSCode type serach](/assets/posts/2019-03-14/vscode-file-type-search.jpg)
