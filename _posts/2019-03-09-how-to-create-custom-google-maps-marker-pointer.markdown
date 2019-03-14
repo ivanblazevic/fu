@@ -7,7 +7,7 @@ tags: [google, marker, custom, pointer, css]
 ---
 In tutorial bellow you'll find how to create custom google maps like marker with pure CSS and HTML
 
-<div id="csstutor" data-height="470" data-href="5c882f95a7c1e07300010bce"></div>
+<div id="csstutor" data-height="470" data-href="5c8a43e6a7c1e07300012265"></div>
 <script src="http://frontendundefined.com/learn/eb.js"></script>
 
 Create custom overlay for the google maps
