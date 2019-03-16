@@ -12,8 +12,7 @@ In tutorial bellow you'll find how to create custom google maps like marker with
 <script src="https://frontendundefined.com/learn/eb.js"></script>
 -->
 
-<iframe src="https://frontendundefined.com/learn?t=5c8a43e6a7c1e07300012265"></iframe>
-
+<iframe src="https://frontendundefined.com/learn/?t=5c8a43e6a7c1e07300012265"></iframe>
 
 Create custom overlay for the google maps:
 
