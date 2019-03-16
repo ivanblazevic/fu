@@ -7,7 +7,7 @@ function includeHTML() {
 
   const isLocalhost = window.location.hostname.indexOf("localhost") > -1;
   const protocol = isLocalhost ? "http" : "https";
-  const path = isLocalhost ? "" : "learn";  
+  const path = isLocalhost ? "" : "learn/";  
   file = protocol + "://" + window.location.hostname + "/" + path + "?t=" + file;
 
   if (file) {
