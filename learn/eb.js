@@ -7,12 +7,8 @@ function includeHTML() {
 
   const isLocalhost = window.location.hostname.indexOf("localhost") > -1;
   const protocol = isLocalhost ? "http" : "https";
-  const path = isLocalhost ? "" : "learn";
-  
-  //file = protocol + "://" + window.location.hostname + "/" + path + "?t=" + file;
-
-  file = "https://frontendundefined.com/learn?t=5c8a43e6a7c1e07300012265";
-  console.log(file);
+  const path = isLocalhost ? "" : "learn";  
+  file = protocol + "://" + window.location.hostname + "/" + path + "?t=" + file;
 
   if (file) {
     /*make an HTTP request using the attribute value as the file name:*/
