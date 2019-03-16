@@ -13,6 +13,8 @@ function includeHTML() {
 
   console.log(file);
 
+  file = "https://frontendundefined.com/learn/?t=5c8a43e6a7c1e0730001226";
+
   if (file) {
     /*make an HTTP request using the attribute value as the file name:*/
     xhttp = new XMLHttpRequest();
