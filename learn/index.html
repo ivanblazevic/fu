@@ -32,27 +32,26 @@
         <input  v-show="showField('name')" ref="name" @blur="onBlur" id="project-name" type="text" v-model="project.name">    
         
         <div style="float: right;line-height: 30px;">
-          <button class="primary" style="margin-right: 10px;" onclick="save()"><i style="margin-right: 6px" class="fas fa-save"></i>Save</button>
-
-          <button class="primary step" onclick="previous()"><i style="margin-right: 6px" class="fas fa-arrow-left"></i>Previous</button>
-          <button class="primary step" onclick="next()">Next<i style="margin-left: 6px" class="fas fa-arrow-right"></i></button>
+          <button class="primary" onclick="save()"><i style="margin-right: 6px" class="fas fa-save"></i>Save</button>
         </div>
       </nav>
 
       <div class="container">
 
-          <div class="side" style="    border-right: 1px solid gray;">
+          <div class="side" style="border-right: 1px solid gray;">
             <h2>HTML
                 <button style="float: right" class="primary" onclick="editElement()">
                   <i v-show="isEditElement" class="fas fa-eye"></i>
                   <i v-show="!isEditElement" class="fas fa-edit"></i>
                 </button>
             </h2>
+ 
+            <div class="box">
+                <div v-show="!isEditElement" id="ee" class="element-p2333"></div>
 
-            <div v-show="!isEditElement" id="ee" class="element-p2333"></div>
-
-            <div v-bind:style="{ opacity: isEditElement ? 1 : 0 }">
-              <textarea id="code" name="code" style="width: 100%;height: 100%"></textarea>
+                <div v-bind:style="{ opacity: isEditElement ? 1 : 0 }">
+                  <textarea id="code" name="code" style="width: 100%;height: 100%"></textarea>
+                </div>
             </div>
 
           </div>
@@ -67,24 +66,37 @@
                     </button>
                   </div>
             </h2>
-
-            <h5 v-show="!isEdit" id="title">{{ step && step.title }}</h5>
-    
-            <h5 v-show="isEdit">
-              <input v-on:change="test" id="titleInput" style="width: 100%" type="text" v-model="project.steps && project.steps[currentIndex].title">
-            </h5>
             
-            <div v-show="!isEdit">
-              <pre><code id="text" class="css">...</code></pre>
-            </div>
-    
-            <div v-bind:style="{ opacity: isEdit ? 1 : 0 }">
-              <textarea id="code_css" name="code_css" style="width: 100%;height: 100%"></textarea>
+            <div class="box">
+                <div v-show="!isEdit">
+                    <pre><code id="text" class="css">...</code></pre>
+                  </div>
+          
+                  <div v-bind:style="{ opacity: isEdit ? 1 : 0 }">
+                    <textarea id="code_css" name="code_css" style="width: 100%;height: 100%"></textarea>
+                  </div>
             </div>
   
           </div>
         </div>
-    </div>
+
+
+        <footer>
+          <div style="float: right">
+              <button class="primary step" onclick="previous()"><i style="margin-right: 6px" class="fas fa-arrow-left"></i>Previous</button>
+              <button class="primary step" onclick="next()">Next<i style="margin-left: 6px" class="fas fa-arrow-right"></i></button>
+  
+          </div>
+
+            <h2 v-show="!isEdit && step" id="title"><span class="current-step">{{ currentIndex + 1 }}</span> {{ step && step.title }}</h2>
+    
+            <h2 v-show="isEdit">
+              <input v-on:change="test" id="titleInput" style="width: 100%" type="text" v-model="project.steps && project.steps[currentIndex].title">
+            </h2>
+        </footer>
+
+      </div>
+
     <script src="app.js"></script>
   </body>
 </html>
