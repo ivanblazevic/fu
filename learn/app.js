@@ -26,6 +26,30 @@ function updateElement() {
   editor.setValue(project.element);
 }
 
+
+Vue.directive('click-outside', {
+  bind (el, binding, vnode) {
+    handleOutsideClick = (e) => {
+      e.stopPropagation()
+      const handler = binding.value
+      if (!el.contains(e.target) && el.init) {
+        handler();
+        el.init = false;
+      } else {
+        el.init = true;
+      }
+    }
+    document.addEventListener('click', handleOutsideClick)
+    document.addEventListener('touchstart', handleOutsideClick)
+  },
+  unbind () {
+    // If the element that has v-closable is removed, then
+    // unbind click/touchstart listeners from the whole page
+    document.removeEventListener('click', handleOutsideClick)
+    document.removeEventListener('touchstart', handleOutsideClick)
+  }
+})
+
 var actions = new Vue({
   el: "#actions",
   data: function() {
@@ -35,7 +59,8 @@ var actions = new Vue({
       step: null,
       currentIndex: step,
       project: project,
-      editField: null
+      editField: null,
+      showModal: false
     }
   },
   methods: {
@@ -56,6 +81,13 @@ var actions = new Vue({
     },
     onBlur: () => {
       this.actions.editField = "a";
+    },
+    saveStep: () => {
+      this.actions.showModal = false;
+      this.save();
+    },
+    cancelModal: () => {
+      this.actions.showModal = false;
     }
   }
 });
@@ -122,10 +154,12 @@ function editElement() {
 
 function save() {
   if (!id) {
+    console.log("Creating...");
     instance.post("", project).then(r => {
       location.search = "t=" + r.data._id;
     })
   } else {
+    console.log("Saving...");
     instance.put("/" + id, project).then(r => {
       console.log(r);
     })
@@ -169,7 +203,8 @@ function init() {
 init();
 
 var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-  mode: 'htmlmixed'
+  mode: 'htmlmixed',
+  theme: 'dracula'
 });
 
 editor.on("change", function() {
@@ -181,7 +216,8 @@ editor.on("change", function() {
 var editorCSS = CodeMirror.fromTextArea(document.getElementById('code_css'), {
   mode: 'css',
   tabSize: 4,
-  smartIndent: false
+  smartIndent: false,
+  theme: 'dracula'
 });
 
 editorCSS.on("change", function() {

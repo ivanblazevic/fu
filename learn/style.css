@@ -1,14 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Thasadith');
+@import url("dracula.css");
+
 :root {
   --main-bg-color: #022c43;
-  --main-text-color: #ffd700;
+  --main-text-color: white;
 }
 
 body {
   margin: 0;
-  font-family: "Rubik", sans-serif;
+  background: whitesmoke;
+  font-family: 'Thasadith', sans-serif;
 }
 
-button { outline: none; }
+button { 
+  outline: none; 
+  font-family: inherit;
+}
+
 input:focus { outline: none; }
 
 nav {
@@ -27,6 +35,10 @@ code {
   border-radius: 6px;
 }
 
+code span {
+  white-space: pre-wrap;
+}
+
 button {
   color: var(--main-text-color);
 }
@@ -36,7 +48,7 @@ button:hover {
 }
 
 nav button {
-  color: #ffd700;
+  color: var(--main-text-color);
 }
 
 button.icon {
@@ -55,7 +67,7 @@ button.primary {
 }
 
 button.step {
-  width: 160px;
+  width: 100px;
 }
 
 del {
@@ -78,76 +90,174 @@ ins {
 
 .side {
   flex: 50%;
-  padding: 12px;
   position: relative;
   box-sizing: border-box;
 }
 
-.side h2 {
-  margin-top: 0;
+.side h3 {
+  background: #053f5e;
+  margin: 0;
+  color: white;
+  padding: 2px 12px;
   line-height: 32px;
+}
+
+.side button {
+  color: white;
+  padding: 6px;
 }
 
 .box {
   position: absolute;
-  top: 50px;
+  top: 48px;
   bottom: 0;
   overflow: auto;
-  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+pre.css {
+  margin: 0;
+  padding: 0.2rem;
 }
 
 .element-p2333 {
-  height: calc(100% - 200px);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #project-name {
-  font-family: "Rubik", sans-serif;
-  border: none;
-  font-size: 30px;
-  font-weight: bold;
-  color: black;
-  padding: 0;
+  width: calc(100% - 130px);
 }
 
-.current-step {
-  width: 40px;
-  height: 40px;
-  background: red;
-  line-height: 40px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 100%;
-  color: white;
+/* TODO: check how to do it programically */
+.CodeMirror {
+  height: 100% !important;
 }
 
 footer {
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   bottom: 0;
-  height: 40px;
   padding: 12px;
   z-index: 100000000;
   width: 100%;
   height: 60px;
   box-sizing: border-box;
-  display: block;
+  text-align: center;
   color: var(--main-text-color);
   background: var(--main-bg-color);
+
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -o-user-select: none;
+  -moz-user-select: none;
 }
 
-footer h2 {
+footer h3 {
   margin-top: 0;
   vertical-align: middle;
   margin-bottom: 0;
 }
 
-footer h2 input {
+.no-styling-input {
   width: 100%;
   background: none;
   border: none;
+  padding: 0;
   color: white;
-  font-size: 1.5em;
-  font-family: "Rubik", sans-serif;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.4);
+  padding-top: 100px;
+  display: none;
+  animation: fadeIn 0.4s;
+}
+
+.overlay.show {
+  display: block;
+}
+
+@keyframes fadeIn {
+  0% {
+    background: rgba(0,0,0,0);
+    padding-top: 0;
+  }
+  100% {
+    background: rgba(0,0,0,0.4);
+    padding-top: 100;
+  }
+}
+
+.step-point {
+  display: inline-flex;
+  justify-content: center;
+  vertical-align: middle;
+  width: 10px;
+  align-items: center;
+  height: 10px;
+  margin: 0 10px;
+}
+
+.step-inner-point {
+  border-radius: 100%;
+  width: 4px;
+  height: 4px;
+  background: white;
+}
+
+.step-inner-point.active {
+  width: 10px;
+  height: 10px;
+  background: white;
+  animation: activeAnimation 0.2s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes activeAnimation  {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal {
+  position: relative;
+  background: white;
+  padding: 12px;
+  width: 440px;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.modal textarea {
+  width: 100%;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.modal button {
+  font-size: 16px;
+  margin-top: 10px;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 24px;
 }

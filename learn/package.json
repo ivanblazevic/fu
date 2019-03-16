@@ -4,11 +4,17 @@
   "description": "",
   "main": "diff.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "node generate.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "text-diff": "^1.0.1"
+    "axios": "^0.18.0",
+    "text-diff": "^1.0.1",
+    "textural-js": "^0.1.7"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^2.1.0",
+    "jshint": "^2.10.2"
   }
 }
