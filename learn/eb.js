@@ -11,6 +11,8 @@ function includeHTML() {
   
   file = protocol + "://" + window.location.hostname + "/" + path + "?t=" + file;
 
+  console.log(file);
+
   if (file) {
     /*make an HTTP request using the attribute value as the file name:*/
     xhttp = new XMLHttpRequest();
