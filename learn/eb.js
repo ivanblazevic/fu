@@ -6,10 +6,13 @@ function includeHTML() {
   const height = elmnt.getAttribute("data-height") || 400;
 
   const isLocalhost = window.location.hostname.indexOf("localhost") > -1;
-  const protocol = isLocalhost ? "http" : "https";
-  const path = isLocalhost ? "" : "learn/";
   
-  file = protocol + "://" + window.location.hostname + "/" + path + "?t=" + file;
+  const prod = "https://frontendundefined.com/learn/"
+  const dev = "http://localhost:8080/"
+
+  const host = isLocalhost ? dev : prod;
+  
+  file = host + "?t=" + file;
 
   if (file) {
     /*make an HTTP request using the attribute value as the file name:*/
