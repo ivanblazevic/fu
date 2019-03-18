@@ -25,6 +25,7 @@ function includeHTML() {
           iframe.style.width = "100%";
           iframe.style.border = "none";
           iframe.style.height = height + "px";
+          iframe.style.borderRadius = "8px";
 
           elmnt.appendChild(iframe);
         }
