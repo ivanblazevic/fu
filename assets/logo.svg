@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 3280 899" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g transform="matrix(38.5228,0,0,38.5228,-8992.68,-20898.3)">
+    <g transform="matrix(38.5228,0,0,38.5228,-8061.68,-20898.3)">
         <text x="233.296px" y="551.503px" style="font-family:'CourierNewPSMT', 'Courier New', monospace;font-size:12px;fill:white;">frontend</text>
         <text x="233.296px" y="563.503px" style="font-family:'CourierNewPS-BoldMT', 'Courier New', monospace;font-weight:700;font-size:12px;fill:white;">undeﬁned</text>
+    </g>
+    <g transform="matrix(1.62942,0,0,1.62942,0.27064,38.3125)">
+        <g transform="matrix(1.00775,0,0,1.79261,9.18942,4.88243)">
+            <path d="M472.883,71.959C472.883,36.207 421.25,7.181 357.654,7.181L120.263,7.181C56.666,7.181 5.033,36.207 5.033,71.959L5.033,201.516C5.033,237.268 56.666,266.295 120.263,266.295L357.654,266.295C421.25,266.295 472.883,237.268 472.883,201.516L472.883,71.959Z" style="fill:rgb(42,122,226);fill-opacity:0;stroke:white;stroke-width:14.07px;"/>
+        </g>
+        <g transform="matrix(16.7526,0,0,16.7526,-3839.36,-8929.7)">
+            <text x="233.296px" y="551.503px" style="font-family:'CourierNewPS-BoldMT', 'Courier New', monospace;font-weight:700;font-size:12px;fill:white;">&lt;/&gt;</text>
+        </g>
     </g>
 </svg>
