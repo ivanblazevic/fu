@@ -3,7 +3,7 @@ layout: post
 title:  "Google maps like marker"
 date:   2019-03-09 19:50:44 +0100
 categories: css maps
-tags: [google, marker, custom, pointer, css]
+tags: [google maps marker css pointer]
 ---
 In the tutorial bellow you'll find how to create google maps like marker with CSS 
 

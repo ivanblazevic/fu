@@ -2,8 +2,8 @@
 layout: post
 title:  "How to create simple button"
 date:   2019-03-09 19:50:44 +0100
-categories: css maps
-tags: [google, marker, custom, pointer, css]
+categories: css froms
+tags: [button css styling create]
 ---
 In the tutorial bellow you'll find how to create how to create simple button with CSS 
 
