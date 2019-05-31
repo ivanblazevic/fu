@@ -37,3 +37,8 @@ retrieve the value
 update the localStorage
 
 `this.localStorageService.accessToken = "new-token";`
+
+
+## Find full example below
+
+<iframe style="width: 100%;height: 800px;border: none;" src="https://stackblitz.com/edit/angular-local-storage-get-set?file=src/app/app.component.ts"></iframe>
